@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback | Lab Data Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Images/Lab Logo.jpeg" alt="Lab Data Hub Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#methods">Methods</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="feedback-container">
+    <h2>We’d Love Your Feedback</h2>
+    <p class="feedback-intro">
+      Help us improve the Lab Data Hub by sharing your thoughts and experiences.
+      Whether it’s a suggestion, bug report, or general feedback — we’d love to hear from you.
+    </p>
+
+    <form id="feedbackForm" class="feedback-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+      <label for="tool">Which tool did you use?</label>
+      <select id="tool" name="tool">
+        <option value="">Select a tool...</option>
+        <option value="voltammetry">Voltammetry</option>
+        <option value="absorbance">Absorbance Spectroscopy</option>
+        <option value="microfluidics">Microfluidic Tracking</option>
+        <option value="immunoassay">Immunoassay Data</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label>How would you rate your experience?</label>
+      <div class="rating-group">
+        <input type="radio" name="rating" value="5" id="r5" required><label for="r5">⭐️⭐️⭐️⭐️⭐️</label>
+        <input type="radio" name="rating" value="4" id="r4"><label for="r4">⭐️⭐️⭐️⭐️</label>
+        <input type="radio" name="rating" value="3" id="r3"><label for="r3">⭐️⭐️⭐️</label>
+        <input type="radio" name="rating" value="2" id="r2"><label for="r2">⭐️⭐️</label>
+        <input type="radio" name="rating" value="1" id="r1"><label for="r1">⭐️</label>
+      </div>
+
+      <label for="comments">Comments</label>
+      <textarea id="comments" name="comments" rows="5" placeholder="Write your feedback here..." required></textarea>
+
+      <button type="submit" class="btn">Submit Feedback</button>
+      <p id="feedbackMessage" class="feedback-message"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Lab Data Hub | <a href="https://github.com/yourgithub">GitHub</a></p>
+  </footer>
+
+  <script src="feedback.js"></script>
+</body>
+</html>

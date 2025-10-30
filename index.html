@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab Data Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+            <img src="Images/Lab Logo.jpeg" alt="Lab Data Hub Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="feedbacks.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Explore Analytical Methods</h1>
+    <p>Search, filter, and launch tools for laboratory data analysis.</p>
+  </section>
+
+  <!-- 🔍 Filter + Search Bar -->
+  <section class="filter-bar">
+    <input type="text" id="searchBox" placeholder="Search methods..." />
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="electrochemistry">Electrochemistry</option>
+      <option value="spectroscopy">Spectroscopy</option>
+      <option value="microfluidics">Microfluidics</option>
+      <option value="biosensing">Biosensing</option>
+    </select>
+  </section>
+
+  <!-- 🧪 Method Cards -->
+  <section id="methods" class="card-grid">
+    <div class="card" data-category="electrochemistry">
+      <img src="icons/voltammetry.svg" alt="Voltammetry" />
+      <h3>Voltammetry</h3>
+      <p>Analyze redox behavior and electrode kinetics through potential scans.</p>
+      <a href="Tool_pages/voltammetry.html" class="btn">Learn More</a>
+    </div>
+
+    <div class="card" data-category="spectroscopy">
+      <img src="icons/absorbance.svg" alt="Absorbance" />
+      <h3>Absorbance Spectroscopy</h3>
+      <p>Process absorbance and transmittance spectra for optical characterization.</p>
+      <a href="absorbance.html" class="btn">Learn More</a>
+    </div>
+
+    <div class="card" data-category="microfluidics">
+      <img src="icons/microfluidics.svg" alt="Microfluidics" />
+      <h3>Microfluidic Tracking</h3>
+      <p>Quantify droplet or flow dynamics in microchannel systems.</p>
+      <a href="microfluidics.html" class="btn">Learn More</a>
+    </div>
+
+    <div class="card" data-category="biosensing">
+      <img src="icons/immunoassay.svg" alt="Immunoassay" />
+      <h3>Immunoassay Data</h3>
+      <p>Analyze ELISA and immunosensor data for concentration quantification.</p>
+      <a href="immunoassay.html" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- 🧾 About -->
+  <section id="about" class="about">
+    <h2>About This Platform</h2>
+    <p>
+      The Lab Data Hub provides interactive tools for analyzing and visualizing laboratory data.
+      Each module links to a Streamlit app for hands-on computation and exploration.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Liu Lab Tools | <a href="https://github.com/ChenshuLiu">GitHub</a> | <a href="https://streamlit.io">Streamlit Tools</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
