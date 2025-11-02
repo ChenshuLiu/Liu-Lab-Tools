@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltammetry | Lab Data Hub</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #2b5fae;
+      color: white;
+    }
+
+    .navbar .btn {
+      background: white;
+      color: #2b5fae;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    main.about {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    main.about h2 {
+      color: #2b5fae;
+      margin-bottom: 1rem;
+    }
+
+    main.about p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .use-cases {
+      margin: 1rem 0 2rem 0;
+      text-align: left;
+    }
+
+    .use-case {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: #fdfdfd;
+    }
+
+    .use-case h4 {
+      margin: 0 0 0.5rem 0;
+      color: #0077cc;
+    }
+
+    .btn-launch {
+      display: inline-block;
+      background: #2b5fae;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+
+    .btn-launch:hover {
+      background: #1d407f;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Data Acquisition</div>
+    <a href="../index.html" class="btn">← Back to Home</a>
+  </header>
+
+  <main class="about">
+    <h2>Wearable Device Data Acquisition</h2>
+
+    <p><strong>Introduction:</strong> Voltammetry is an electrochemical technique used to analyze redox reactions by measuring current as a function of potential. It provides insights into reaction kinetics, diffusion, and concentration of analytes.</p>
+
+    <p><strong>How to Use:</strong> Select a use case below to launch the corresponding Streamlit app. Each app contains specialized tools for that specific analysis.</p>
+
+    <!-- Use Cases -->
+    <div class="use-cases">
+
+      <div class="use-case">
+        <h4>Apple Watch Physiological Readouts</h4>
+        <p>Read, visualize, and convert Apple Watch (series 8 and after) physiological sensor readouts into csv files.</p>
+        <a href="https://streamlit-app-quantification" target="_blank" class="btn-launch">Launch Tool</a>
+      </div>
+
+      <div class="use-case">
+        <h4>Free-style Libre CGM Readouts</h4>
+        <p>Extract data readings from Free-style Libre CGM sensor app time-series diagrams.</p>
+        <a href="https://streamlit-app-kinetics" target="_blank" class="btn-launch">Launch Tool</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Liu Lab Tools</p>
+  </footer>
+</body>
+</html>
