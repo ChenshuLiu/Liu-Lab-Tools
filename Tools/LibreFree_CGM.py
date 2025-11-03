@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from datetime import timedelta
 
-st.title("Chart Data Extractor")
+st.title("Free Style Libre CGM Data Extraction Tool")
 
 # Upload chart image
 uploaded_file = st.file_uploader("Upload chart image", type=["jpg", "png", "jpeg"])

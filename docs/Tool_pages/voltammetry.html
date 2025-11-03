@@ -62,22 +62,45 @@
       padding: 1rem;
       margin-bottom: 1rem;
       background: #fdfdfd;
+      text-align: center;
     }
 
-    .use-case h4 {
-      margin: 0 0 0.5rem 0;
-      color: #0077cc;
+    .use-case img {
+      display: block;
+      margin: 0.5rem auto 1rem auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .btn-launch {
-      display: inline-block;
+      display: inline-block; /* instead of block */
       background: #2b5fae;
       color: white;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin: 0.5rem auto 0 auto; /* center the button */
+    }
+
+    .video-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .video-container video {
+      width: 90vw;           /* 90% of the viewport width */
+      max-width: 100%;       /* never exceed the container width */
+      height: auto;          /* maintain aspect ratio */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .btn-launch:hover {
@@ -96,7 +119,7 @@
   <main class="about">
     <h2>Voltammetry</h2>
 
-    <p><strong>Introduction:</strong> Voltammetry is an electrochemical technique used to analyze redox reactions by measuring current as a function of potential. It provides insights into reaction kinetics, diffusion, and concentration of analytes.</p>
+    <p><strong>Introduction:</strong> Voltammetry is a suite of electrochemical techniques used to analyze redox reactions by measuring current as a function of potential. It provides insights into reaction kinetics, diffusion, and concentration of analytes.</p>
 
     <p><strong>How to Use:</strong> Select a use case below to launch the corresponding Streamlit app. Each app contains specialized tools for that specific analysis.</p>
 
@@ -104,21 +127,21 @@
     <div class="use-cases">
 
       <div class="use-case">
-        <h4>Analyte Quantification</h4>
-        <p>Measure concentration using calibration curves.</p>
-        <a href="https://streamlit-app-quantification" target="_blank" class="btn-launch">Launch Tool</a>
+        <h4>CV Normalization & Delta I</h4>
+        <p>Normalizes CV curves and calculate delta I.</p>
+        <!-- <img src="../Images/Animal Study.webp" alt="Analyte Quantification Demo" /> -->
+        <div class = "video-container">
+          <video autoplay loop muted playsinline>
+            <source src="../Images/voltammetry_CVnorm_deltaI.mp4" type="video/mp4">
+          </video>
+        </div>
+        <a href="https://liu-lab-tools-cvnorm-deltai.streamlit.app/" target="_blank" class="btn-launch">Launch Tool</a>
       </div>
 
       <div class="use-case">
         <h4>Kinetic Analysis</h4>
         <p>Determine electron transfer rates and reaction mechanisms.</p>
         <a href="https://streamlit-app-kinetics" target="_blank" class="btn-launch">Launch Tool</a>
-      </div>
-
-      <div class="use-case">
-        <h4>Electrode Performance</h4>
-        <p>Evaluate surface modifications or sensor stability.</p>
-        <a href="https://streamlit-app-electrode" target="_blank" class="btn-launch">Launch Tool</a>
       </div>
 
     </div>

@@ -6,7 +6,7 @@
   <title>Voltammetry | Lab Data Hub</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
-    body {
+        body {
       font-family: 'Lato', sans-serif;
       margin: 0;
       padding: 0;
@@ -62,22 +62,45 @@
       padding: 1rem;
       margin-bottom: 1rem;
       background: #fdfdfd;
+      text-align: center;
     }
 
-    .use-case h4 {
-      margin: 0 0 0.5rem 0;
-      color: #0077cc;
+    .use-case img {
+      display: block;
+      margin: 0.5rem auto 1rem auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .btn-launch {
-      display: inline-block;
+      display: inline-block; /* instead of block */
       background: #2b5fae;
       color: white;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin: 0.5rem auto 0 auto; /* center the button */
+    }
+
+    .video-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .video-container video {
+      width: 90vw;           /* 90% of the viewport width */
+      max-width: 100%;       /* never exceed the container width */
+      height: auto;          /* maintain aspect ratio */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .btn-launch:hover {
@@ -106,12 +129,22 @@
       <div class="use-case">
         <h4>Apple Watch Physiological Readouts</h4>
         <p>Read, visualize, and convert Apple Watch (series 8 and after) physiological sensor readouts into csv files.</p>
+        <div class = "video-container">
+          <video autoplay loop muted playsinline>
+            <source src="../Images/data_acq_apple.mp4" type="video/mp4">
+          </video>
+        </div>
         <a href="https://streamlit-app-quantification" target="_blank" class="btn-launch">Launch Tool</a>
       </div>
 
       <div class="use-case">
         <h4>Free-style Libre CGM Readouts</h4>
         <p>Extract data readings from Free-style Libre CGM sensor app time-series diagrams.</p>
+        <div class = "video-container">
+          <video autoplay loop muted playsinline>
+            <source src="../Images/data_acq_librefree.mp4" type="video/mp4">
+          </video>
+        </div>
         <a href="https://streamlit-app-kinetics" target="_blank" class="btn-launch">Launch Tool</a>
       </div>
 
