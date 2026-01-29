@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="CV Curve Standardization", layout="wide")
-st.title("📊 CV Curve Standardization Pipeline")
+st.set_page_config(page_title="CA Normalization", layout="wide")
+st.title("📊 CA Normalization")
 
 uploaded_file = st.file_uploader("📤 Upload Data File", type=["csv", "xlsx"])
 if uploaded_file:
@@ -70,10 +70,15 @@ if uploaded_file:
     max_len = max(len1, len2)
 
     # --------------------- STANDARDIZATION ---------------------
+    print(f"np.abs max is {np.max(np.abs(y1_clean))}")
+    print(f"np.min is {np.min(y1_clean)}")
     max1 = np.max(np.abs(y1_clean)) if np.max(np.abs(y1_clean)) != 0 else 1
+    print(f"max1 is {max1}")
     max2 = np.max(np.abs(y2_clean)) if np.max(np.abs(y2_clean)) != 0 else 1
-    y1_std = y1_clean / max1
-    y2_std = y2_clean / max2
+    y1_std = -np.abs(y1_clean) / max1
+    print(f"y1_std min {np.min(y1_std)}")
+    y2_std = -np.abs(y2_clean) / max2
+    print(f"y2_std min {np.min(y2_std)}")
 
     # --------------------- PLOTTING ---------------------
     st.subheader("📈 Raw CV Curves")
@@ -96,12 +101,25 @@ if uploaded_file:
     ax_std.legend()
     st.pyplot(fig_std, use_container_width=True)
 
-    # --------------------- DELTA COMPUTATION ---------------------
-    y1_trim = y1_std[:len1]
-    y2_trim = y2_std[:len2]
-    delta = np.abs(np.max(y1_trim) - np.max(y2_trim))
-    st.subheader("📏 Δ (Difference Between Standardized Maxima)")
-    st.metric(label="Δ between standardized maxima", value=f"{delta:.4f}")
+    # --------------------- POINT-WISE DIFFERENCE COMPUTATION ---------------------
+    # Align lengths
+    min_len = min(len1, len2)
+    y1_aligned = y1_std[:min_len]
+    y2_aligned = y2_std[:min_len]
+
+    print(f"y1_aligned {np.max(y1_std)} {np.max(y2_std)}")
+    # Absolute point-wise differences
+    abs_diffs = np.abs(y1_aligned - y2_aligned)
+
+    # Largest absolute difference
+    max_abs_diff = np.max(abs_diffs)
+
+    st.subheader("📏 Maximum Point-wise Difference")
+    st.metric(
+        label="Max |y₁ − y₂| (standardized, point-wise)",
+        value=f"{max_abs_diff:.4f}"
+        )
+
 
     # --------------------- EXPORT ---------------------
     y1_export = np.pad(y1_std, (0, max_len - len1), constant_values=np.min(y1_std))
